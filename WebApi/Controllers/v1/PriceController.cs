@@ -22,7 +22,7 @@ namespace WebApi.Controllers.v1
         }
         
         /// <summary>
-        /// Get Story By Id and process it
+        /// Get available symbols
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -39,9 +39,9 @@ namespace WebApi.Controllers.v1
         }
 
         /// <summary>
-        /// Get Story By Id and process it
+        /// Get Price by Symbol
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="symbol">symbol to get price</param>
         /// <returns></returns>
         [HttpGet("{symbol}")]
         public async Task<IActionResult> GetPriceBySymbol(string symbol)

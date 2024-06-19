@@ -1,0 +1,15 @@
+[
+  {
+    "Id": 1,
+    "Story": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\ndolore magna aliqua. Ut consequat semper viverra nam libero justo laoreet sit. Eget nunc lobortis mattis\naliquam faucibus purus in massa.\n\nRhoncus est pellentesque elit ullamcorper dignissim. Consectetur adipiscing elit duis tristique sollicitudin\nnibh sit amet. Nunc mattis enim ut tellus elementum sagittis vitae.\nDonec enim diam vulputate ut. Ipsum dolor sit amet consectetur adipiscing elit duis tristique\nsollicitudin. Dolor morbi non arcu risus quis varius quam quisque id. Aliquam ultrices sagittis orci a\nscelerisque purus.\n\nEuismod lacinia at quis risus sed vulputate odio ut. Tempus egestas sed sed risus pretium quam.\nConsectetur a erat nam at. Amet tellus cras adipiscing enim."
+  },
+  {
+    "Id": 2,
+    "Story": "This is a Story with no linebreaks, so it should not contain more that 1 new paragraph. This is the second paragraph"
+  },
+  {
+    "Id": 3,
+    "Story": "This is a Story with many linebreaks, so it should not contain more that 1 new paragraph.\n This is the second paragraph. \n this the third"
+  }
+]
+

@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using WebApi.Middlewares;
 using WebApi.Services;
 using WebApi.Services.AlphaVantageService;
+using WebApi.Services.HttpClientWrapper;
 
 namespace WebApi
 {
@@ -51,8 +52,19 @@ namespace WebApi
                 config.ReportApiVersions = true;
             });
             #endregion
-            services.AddHostedService<PriceUpdateService>();
+
+            // Registering HttpClientWrapper as a singleton so it can be injected wherever IHttpClientWrapper is needed
+            // This is for testing purposes
+            services.AddSingleton<IHttpClientWrapper, HttpClientWrapper>();
             services.AddSingleton<IAlphaVantageService, AlphaVantageService>();
+            // Registering PriceUpdateService as a singleton for IPriceUpdateService to allow it to be injected
+            // This is for testing purposes
+            services.AddSingleton<IPriceUpdateService, PriceUpdateService>();
+            // Registering PriceUpdateService as a hosted service so it runs in the background
+            services.AddHostedService<PriceUpdateService>();
+            // Register HttpClient to be used by HttpClientWrapper
+            services.AddHttpClient<HttpClientWrapper>();
+            
             services.AddControllers();
             services.AddHttpClient();
             services.AddLogging(configure => configure.AddConsole())
